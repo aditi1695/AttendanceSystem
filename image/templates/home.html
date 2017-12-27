@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Student Attendance Home</h1>
+
+  <p>Welcome to <em>Student Attendance System</em></p>
+
+
+
+  <h2>The college has the following record counts:</h2>
+  <ul>
+    <li><strong>Number of Students:</strong> {{ num_students }}</li>
+    <li><strong>Number of Teachers:</strong> {{ num_teachers }}</li>
+    <li><strong>Number of Lectures:</strong> {{ num_lectures }}</li>
+    <li><strong>Number of Courses:</strong> {{ num_courses }}</li>
+  </ul>
+
+<!-- Add additional CSS in static file -->
+
+{% load static %}
+<link rel  = "stylesheet" href = "{% static 'css/styles.css' %}">
+
+
+
+{% endblock %}

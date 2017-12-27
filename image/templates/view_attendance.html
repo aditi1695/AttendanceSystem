@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Attendance</h1>
+
+    {% if student_data %}
+    <ul>
+
+      {% for st in student_data %}
+      <h2>{{ st.1 }}</h2>
+      <ul>
+        <li><strong>Students Name:</strong> {{ st.0 }}</li>
+        <li><strong>Attendance:</strong> {{ st.2 }}</li>
+      </ul>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no courses in the college.</p>
+    {% endif %}
+{% endblock %}

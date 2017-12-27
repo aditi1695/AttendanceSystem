@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Student List</h1>
+
+    {% if student_list %}
+    <ul>
+
+      {% for student in student_list %}
+      <li>
+        <a href="{{ student.get_absolute_url }}">{{ student.roll_number }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no students registered.</p>
+    {% endif %}       
+{% endblock %}

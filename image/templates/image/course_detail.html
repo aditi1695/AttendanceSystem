@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Course Code: {{ course.course_id }}</h1>
+  <p><strong>Course Name:</strong> {{ course.course_name }}</p>
+  <li><a href="{% url 'viewatt' pk=course.course_id %}">View Attendance</a></li>
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Lectures</h4>
+    <p><strong>Total Number of Lectures</strong> {{course.lecture_set.all.count}}</p>
+    {% for copy in course.lecture_set.all %}
+    <hr>
+    <p><strong>Course Name</strong> {{copy.course_id}}</p>
+
+    <p><strong>Lecture Time:</strong> {{copy.lecture_date_time}}</p>
+    <p class="text-muted"><strong>Lecture Id:</strong> {{copy.lecture_id}}</p>
+    <p><strong>Lecture Image</strong> {{copy.lecture_image}}</p>
+    <p><strong>Students :</strong> {% for s_p in copy.student_roll_no.all %} {{ s_p }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    {% endfor %}
+
+
+
+
+  </div>
+  {% endblock %}

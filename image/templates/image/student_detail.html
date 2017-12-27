@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Roll Number: {{ student.roll_number }}</h1>
+<p><strong>Roll Number:</strong> {{ student.roll_number }}</p>
+<p><strong>First Name:</strong> {{ student.first_name }}</p>
+<p><strong>Last Name:</strong> {{ student.last_name }}</p>
+<p><strong>Image:</strong> {{ student.student_image }}</p>
+<p><strong>Total Lectures:</strong> {{ student.lecture_set.all.count }}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+    <h4>Lectures</h4>
+
+    {% for copy in student.lecture_set.all %}
+    <hr>
+    <p><strong>Course Name</strong> {{copy.course_id}}</p>
+
+    <p><strong>Lecture Time:</strong> {{copy.lecture_date_time}}</p>
+    <p class="text-muted"><strong>Lecture Id:</strong> {{copy.lecture_id}}</p>
+    <p><strong>Lecture Image</strong> {{copy.lecture_image}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
