@@ -13,7 +13,13 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
+<style>
+body {background-color: black;}
+h1   {color: white;}
+h2   {color: white;}
+p    {color: ghostwhite;}
+li    {color: white;}
+</style>
 <body>
 
   <div class="container-fluid">
@@ -21,7 +27,9 @@
     <div class="row">
       <div class="col-sm-2">
       {% block sidebar %}
+
       <ul class="sidebar-nav">
+
           <li><a href="{% url 'homepage' %}">Home</a></li>
           <li><a href="{% url 'students' %}">All Students</a></li>
           <li><a href="{% url 'courses' %}">All Courses</a></li>
@@ -29,7 +37,6 @@
           <li><a href="{% url 'course_create' %}">Add a Course</a></li>
           <li><a href="{% url 'student_create' %}">Add a Student</a></li>
           <li><a href="{% url 'teacher_create' %}">Add a Teacher</a></li>
-
       </ul>
      {% endblock %}
       </div>
